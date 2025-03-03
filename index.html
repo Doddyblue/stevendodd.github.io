@@ -1,39 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Steven Dodd</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Checking Robot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .robot {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 100px; /* Default position */
+            left: 50%;  /* Default position */
+            transform: translateX(-50%); /* Center horizontally */
+            transition: all 1s ease; /* Smooth movement */
+            z-index: 10; /* Ensure the robot is on top */
+        }
+
+        .warehouse {
+            display: inline-block;
+            margin: 10px;
+            width: 200px;
+            height: 150px;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+            line-height: 150px;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .warehouses {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .stock-list, .log-list {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
+    <h1>Stock Checking Robot</h1>
+    <img src="robot.png" alt="Robot" class="robot" id="robot">
+    <div class="warehouses">
+        <div class="warehouse" id="warehouse1" onclick="checkStock(1)">Warehouse 1</div>
+        <div class="warehouse" id="warehouse2" onclick="checkStock(2)">Warehouse 2</div>
+        <div class="warehouse" id="warehouse3" onclick="checkStock(3)">Warehouse 3</div>
+    </div>
+    <p>Click on a warehouse to check stock...</p>
+    <div class="stock-list" id="stockList"></div>
+    <div class="log-list" id="logList"></div>
+ 
 
-<h1>Please see link to Lab work for week 5 below:</h1>
-<ul>
-	<li><a href="Week_5_Lab/CV_week_5.html">Steven Dodd CV for Week 5</a></li>
-</ul>
+    <script>
+        const robot = document.getElementById('robot');
+        const stockList = document.getElementById('stockList');
+        const logList = document.getElementById('logList');
+        const warehouses = [
+            { id: 1, name: 'Warehouse 1', items: ['Item A1', 'Item A2', 'Item A3'] },
+            { id: 2, name: 'Warehouse 2', items: ['Item B1', 'Item B2', 'Item B3'] },
+            { id: 3, name: 'Warehouse 3', items: ['Item C1', 'Item C2', 'Item C3'] }
+        ];
 
-<h1>Please see links to Lab work for week 6 below:</h1>
-<ul>
-	<li><a href="Week_6_Lab\CV_week_6.html">Steven Dodd CV for Week 6</a></li>
-</ul>
+        function checkStock(warehouseId) {
+            const warehouse = warehouses.find(w => w.id === warehouseId);
+            const warehouseElement = document.getElementById(`warehouse${warehouseId}`);
+            const rect = warehouseElement.getBoundingClientRect();
+            robot.style.left = rect.left + window.scrollX + (rect.width / 2) - (robot.width / 2) + 'px';
+            robot.style.top = rect.top + window.scrollY + (rect.height / 2) - (robot.height / 2) + 'px';
 
-<h1>Please see links to Lab work for week 7 below:</h1>
-<ul>
-	<li><a href="Week_7_Lab\User_Form.html">User form for week 7</a></li>
-</ul>
+            setTimeout(() => {
+                alert(`The robot is checking stock in: ${warehouse.name}`);
+                displayStock(warehouse);
+                logStockCheck(warehouse);
+            }, 1000); // Delay to simulate the robot moving to the warehouse
+        }
 
-<h1>Please see links to Lab work for week 8 below:</h1>
-<ul>
-	<li><a href="Week_8_Lab/RPS_Game.html">Rock Paper Scissors Game for Week 8</a></li>
-</ul>
+        function displayStock(warehouse) {
+            stockList.innerHTML = `<h2>${warehouse.name} Stock</h2><ul>` + warehouse.items.map(item => `<li>${item}</li>`).join('') + '</ul>';
+        }
 
-<h1>Please see links to Lab work for week 9 below:</h1>
-<ul>
-	<li><a href="Week_9_Lab/Week 9 Song 99 bottles of beer/index.html">99 Bottles of beer on the wall</a></li>
-	<li><a href="Week_9_Lab/RPS v1.2/RPS.html">Rock Paper Scissors Game for Week 9</a></li>
-</ul>
-<h1>Please see links to Lab work for week 10 below:</h1>
-<ul>
-	<li><a href="Week_10_Lab/index.html">Question 6</a></li>
-</ul>
-
+        function logStockCheck(warehouse) {
+            const now = new Date();
+            const timestamp = now.toLocaleString();
+            const logEntry = `<li>${timestamp}: Checked stock in ${warehouse.name}. Items: ${warehouse.items.join(', ')}</li>`;
+            logList.innerHTML += logEntry;
+        }
+    </script>
 </body>
 </html>
