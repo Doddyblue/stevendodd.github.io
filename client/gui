@@ -1,0 +1,33 @@
+const grpc = require('@grpc/grpc-js');
+const protoLoader = require('@grpc/proto-loader');
+const express = require('express');
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'views')));
+
+const PROTO_PATH = '../proto/stock.proto'; // Adjust the path to match your structure
+const packageDefinition = protoLoader.loadSync(PROTO_PATH, {});
+const stockProto = grpc.loadPackageDefinition(packageDefinition).stock;
+
+const client = new stockProto.StockService('localhost:50051', grpc.credentials.createInsecure());
+const app = express();
+
+// Serve the HTML file explicitly at the root route
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
+// REST endpoint to fetch stock list
+app.get('/api/stocks', (req, res) => {
+    client.GetStockList({}, (err, response) => {
+        if (err) {
+            console.error('Error:', err.message);
+            return res.status(500).send('Failed to fetch stock list');
+        }
+        res.json(response.items);
+    });
+});
+
+// Start the Express server
+app.listen(3000, () => {
+    console.log('GUI Server running at http://localhost:3000');
+});
