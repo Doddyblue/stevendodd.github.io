@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package get_stock;
+
+message StockRequest {
+    string stock_id = 1;
+}
+
+message StockItem {
+    string id = 1;
+    string name = 2;
+    int32 quantity = 3;
+    float price = 4;
+}
+
+message StockResponse {
+    StockItem item = 1;
+}
+
+service GetStockService {
+    rpc GetStockById (StockRequest) returns (StockResponse);
+}

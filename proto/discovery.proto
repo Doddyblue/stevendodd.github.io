@@ -1,0 +1,19 @@
+syntax = "proto3";
+package discovery;
+
+import "google/protobuf/empty.proto";
+
+
+message ServiceInfo {
+    string name = 1;
+    string address = 2;
+}
+
+message ServiceList {
+    repeated ServiceInfo services = 1;
+}
+
+service DiscoveryService {
+    rpc RegisterService(ServiceInfo) returns (google.protobuf.Empty);
+    rpc GetServices(google.protobuf.Empty) returns (ServiceList);
+}
