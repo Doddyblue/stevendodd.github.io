@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package chat;
+
+// Service and other definitions follow
+service ChatService {
+  rpc SendMessage (ChatRequest) returns (ChatResponse);
+}
+
+message ChatRequest {
+  string user = 1;
+  string message = 2;
+}
+
+message ChatResponse {
+  string response = 1;
+}

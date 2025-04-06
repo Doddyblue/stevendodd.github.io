@@ -3,13 +3,25 @@ const protoLoader = require('@grpc/proto-loader');
 const path = require('path');
 
 // Load `get_stock.proto`
-const GET_STOCK_PROTO_PATH = path.join(__dirname, '../proto/get_stock.proto');
-const getStockDefinition = protoLoader.loadSync(GET_STOCK_PROTO_PATH, {});
+const GET_STOCK_PROTO_PATH = path.join(__dirname, '../proto/getstock.proto');
+const getStockDefinition = protoLoader.loadSync(GET_STOCK_PROTO_PATH, {
+    keepCase: true,
+    longs: String,
+    enums: String,
+    defaults: true,
+    oneofs: true
+});
 const getStockProto = grpc.loadPackageDefinition(getStockDefinition).get_stock;
 
 // Load `discovery.proto`
 const DISCOVERY_PROTO_PATH = path.join(__dirname, '../proto/discovery.proto');
-const discoveryDefinition = protoLoader.loadSync(DISCOVERY_PROTO_PATH, {});
+const discoveryDefinition = protoLoader.loadSync(DISCOVERY_PROTO_PATH, {
+    keepCase: true,
+    longs: String,
+    enums: String,
+    defaults: true,
+    oneofs: true
+});
 const discoveryProto = grpc.loadPackageDefinition(discoveryDefinition).discovery;
 
 // Stock list data
@@ -21,8 +33,11 @@ const stockItems = [
 
 // Implement `GetStockById`
 const getStockById = (call, callback) => {
-    console.log(`Requested stock ID: ${call.request.stock_id}`);
+    if (!call.request.stock_id) {
+        return callback({ code: grpc.status.INVALID_ARGUMENT, details: "Stock ID is required" });
+    }
 
+    console.log(`Requested stock ID: ${call.request.stock_id}`);
     const stockItem = stockItems.find(item => item.id === call.request.stock_id);
 
     if (stockItem) {
@@ -40,11 +55,15 @@ getStockServer.addService(getStockProto.GetStockService.service, { GetStockById:
 
 const GET_STOCK_SERVICE_ADDRESS = '127.0.0.1:50053';
 
-getStockServer.bindAsync(GET_STOCK_SERVICE_ADDRESS, grpc.ServerCredentials.createInsecure(), () => {
+getStockServer.bindAsync(GET_STOCK_SERVICE_ADDRESS, grpc.ServerCredentials.createInsecure(), (err, port) => {
+    if (err) {
+        console.error("Failed to start GetStock Service:", err.message);
+        return;
+    }
     console.log(`GetStock Service running at ${GET_STOCK_SERVICE_ADDRESS}`);
 
     // Register `GetStockService` with Discovery Service
-    const discoveryClient = new discoveryProto.DiscoveryService('127.0.0.1:50052', grpc.credentials.createInsecure());
+    const discoveryClient = new discoveryProto.DiscoveryService('127.0.0.1:50050', grpc.credentials.createInsecure());
     const serviceInfo = { name: "GetStockService", address: GET_STOCK_SERVICE_ADDRESS };
 
     discoveryClient.RegisterService(serviceInfo, (err, response) => {
@@ -54,4 +73,6 @@ getStockServer.bindAsync(GET_STOCK_SERVICE_ADDRESS, grpc.ServerCredentials.creat
             console.log('GetStock Service registered successfully with Discovery Service');
         }
     });
+
+    //getStockServer.start(); // Ensure the gRPC server is actually running after registration
 });
