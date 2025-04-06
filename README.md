@@ -2,8 +2,8 @@
 ## Installation
 1. Clone this repository to your local machine.
 ## How to Run This Project
-Run the server:
-2. Navigate to the server file directory: cd server
+2. Run the server:
+    * Navigate to the server file directory: cd server
 3. Start the server: node server.js
     * Start the stock service: node getstock.js
     * Start the discovery service: node discovery-server.js
