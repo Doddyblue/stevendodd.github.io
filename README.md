@@ -8,4 +8,7 @@
     * Start the stock service: node stock.js
     * Start the get stock service: node getstock.js
     * Start the chat service: node chat.js
+3. Run the client application
+    * Navigate to the server file directory: cd client
+    * Start the application: node app.js
 4. Once the above services are running, open your browser and go to localhost:3000.
