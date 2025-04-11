@@ -34,8 +34,6 @@ server.bindAsync(CHAT_SERVICE_ADDRESS, grpc.ServerCredentials.createInsecure(), 
     return;
   }
   console.log(`Chat Service running at ${CHAT_SERVICE_ADDRESS}`);
-  // Note: Calling start() here is optional per the deprecation notice.
-  server.start();
 
   // Register the Chat Service with the Discovery Service.
   const DISCOVERY_PROTO_PATH = path.join(__dirname, '../proto/discovery.proto');

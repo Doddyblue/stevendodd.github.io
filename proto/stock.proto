@@ -2,19 +2,19 @@ syntax = "proto3";
 
 package stock;
 
-import "google/protobuf/empty.proto"; // Import Google's Empty type
-
-message StockItem {
-    string id = 1;
-    string name = 2;
-    int32 quantity = 3;
-    float price = 4;
-}
-
-message StockList {
-    repeated StockItem items = 1;
-}
-
 service StockService {
-    rpc GetStockList (google.protobuf.Empty) returns (StockList);
+  rpc GetStockList (StockListRequest) returns (StockListResponse);
+}
+
+message StockListRequest {}
+
+message StockListResponse {
+  repeated Stock items = 1;
+}
+
+message Stock {
+  string id = 1;
+  string name = 2;
+  int32 quantity = 3;
+  float price = 4;
 }

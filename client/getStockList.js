@@ -17,6 +17,11 @@ const stockDefinition = protoLoader.loadSync(STOCK_PROTO_PATH, {
 });
 const stockProto = grpc.loadPackageDefinition(stockDefinition).stock;
 
+
+const GETSTOCKLIST_SERVICE_ADDRESS = '127.0.0.1:50051';
+const stockClient = new stockProto.StockService(GETSTOCKLIST_SERVICE_ADDRESS, grpc.credentials.createInsecure());
+
+
 /**
  * Retrieves the stock list via gRPC.
  *
@@ -51,7 +56,13 @@ if (require.main === module) {
     if (err) {
       console.error("Error retrieving stock list:", err);
     } else {
-      console.log("Stock list:", items);
+  //    console.log("Stock list:", itemsitems.forEach(item => {
+  //console.log("Stock list:", items);
+  //items.forEach(item => {
+  //  console.log(`Stock Name: ${item.name}, Price: €${item.price.toFixed(2)}`);
+  //});
+  console.log("Stock list:", items.map(item => ({ ...item, price: item.price.toFixed(2) })));
+
     }
   });
 }
