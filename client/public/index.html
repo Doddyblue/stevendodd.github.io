@@ -1,56 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock List</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock List & Chat</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
-    <h1>Stock List</h1>
+  <h1>Stock List</h1>
+  <!-- prints curent stock -->
+  <ul id="stock-list"></ul>
 
-    <!-- Search Stock By ID -->
-    <input type="text" id="stock-id-input" placeholder="Enter Stock ID">
-    <button onclick="fetchStockById()">Search Stock</button>
-    <div id="stock-result"></div>
+  <!-- User input to seatch stock by ID No.-->
+  <input type="text" id="stock-id-input" placeholder="Enter Stock ID">
+  <button onclick="fetchStockById()">Search Stock</button>
+  <div id="stock-result"></div>
 
-    <!-- Display Full Stock List -->
-    <ul id="stock-list"></ul>
-
-    <script>
-        // Fetch and display full stock list from the REST API
-        fetch('/api/stocks')
-            .then(response => response.json())
-            .then(data => {
-                const list = document.getElementById('stock-list');
-                data.forEach(stock => {
-                    const item = document.createElement('li');
-                    item.textContent = `${stock.name} (Quantity: ${stock.quantity}, Price: $${stock.price})`;
-                    list.appendChild(item);
-                });
-            })
-            .catch(error => console.error('Error fetching stock list:', error));
-
-        // Fetch stock by ID and display details
-        function fetchStockById() {
-            const stockId = document.getElementById('stock-id-input').value;
-            fetch(`/api/stocks/${stockId}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Stock item not found');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const resultContainer = document.getElementById('stock-result');
-                    resultContainer.innerHTML = `<strong>Name:</strong> ${data.name},
-                                                 <strong>Quantity:</strong> ${data.quantity},
-                                                 <strong>Price:</strong> $${data.price}`;
-                })
-                .catch(error => {
-                    document.getElementById('stock-result').innerHTML = error.message;
-                    console.error('Error fetching stock item:', error);
-                });
-        }
-    </script>
+  <hr>
+  <!-- live chat you must enter your name then your message -->
+  <h2>Live Chat</h2>
+  <input type="text" id="chat-user" placeholder="Your name">
+  <input type="text" id="chat-message" placeholder="Enter message">
+  <button onclick="sendChat()">Send Message</button>
+  <div id="chat-display"></div>
 </body>
 </html>
