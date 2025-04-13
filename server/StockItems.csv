@@ -1,0 +1,1001 @@
+id,name,quantity,price
+1,Food - Condiments,92,4.29
+2,Food - Beverages,71,14.99
+3,Food - Salads,29,5.49
+4,Food - Beverages,83,1.99
+5,Music,75,19.99
+6,Food - Beverages,38,3.29
+7,Pets,52,14.99
+8,Automotive,46,12.99
+9,Food - Snacks,20,2.89
+10,Electronics,96,199.99
+11,Outdoor,42,19.99
+12,Food - Snacks,36,2.99
+13,Toys,50,29.99
+14,Clothing - Outerwear,59,49.99
+15,Kitchen,63,79.99
+16,Grooming,7,34.99
+17,Pets,30,18.99
+18,Fitness,1,89.99
+19,Kitchen,76,39.99
+20,Kitchen,46,19.99
+21,Toys,56,29.99
+22,Computers,97,39.99
+23,Fitness,2,14.99
+24,Garden,1,12.99
+25,Safety,41,14.99
+26,Pets,43,79.99
+27,Clothing - Shirts,57,29.99
+28,Food - Snacks,23,3.29
+29,Health,58,89.99
+30,Food - Meat,17,7.99
+31,Food - Snacks,20,4.99
+32,Clothing - Tops,79,22.99
+33,Garden,65,8.99
+34,Fitness,57,24.99
+35,Clothing - Bottoms,16,54.99
+36,Food - Condiments,87,2.49
+37,Toys,91,34.99
+38,Food - Breakfast,58,4.99
+39,Food - Snacks,95,3.99
+40,Outdoor,85,59.99
+41,Food - Breakfast,96,4.19
+42,Pets,88,5.99
+43,Food - Condiments,85,2.49
+44,Kitchen,4,34.99
+45,Outdoor,14,159.99
+46,Fitness,62,49.99
+47,Food - Breakfast,77,2.49
+48,Food - Grains,50,1.49
+49,Food - Spices,25,1.99
+50,Kitchen,27,89.99
+51,Food - Meat,4,10.99
+52,Fitness,53,25.99
+53,Travel,41,22.99
+54,Toys,54,35.99
+55,Food - Canned Goods,39,1.29
+56,Food - Frozen Foods,60,3.99
+57,Home,10,34.99
+58,Garden,93,49.99
+59,Footwear,1,89.99
+60,Kitchen,34,24.99
+61,Home,28,29.99
+62,Electronics,72,49.99
+63,Food - Snacks,8,1.39
+64,Art Supplies,25,29.99
+65,Pets,91,39.99
+66,Kitchen,3,39.99
+67,Home,33,24.99
+68,Food - Bakery,67,4.99
+69,Food - Sauces,51,2.79
+70,Food - Frozen,28,4.99
+71,Food - Dairy,94,3.49
+72,Kitchen,58,34.99
+73,Books,81,19.99
+74,Storage,95,15.99
+75,Garden,81,14.99
+76,Kitchen,50,49.99
+77,Outdoor,90,29.99
+78,Food - Breakfast,55,5.49
+79,Home,30,39.99
+80,Food - Pasta,86,3.79
+81,Pets,70,14.99
+82,Food - Snacks,56,4.99
+83,Accessories,83,49.99
+84,Home,33,69.99
+85,Accessories,10,15.49
+86,Food - Frozen,52,6.99
+87,Outdoor,76,49.99
+88,Outdoor,87,19.99
+89,Kitchen,26,34.99
+90,Fitness,88,22.99
+91,Food - Breakfast,47,3.29
+92,Home,10,12.99
+93,Food - Frozen Foods,28,3.99
+94,Kitchen,67,19.99
+95,Clothing - Tops,60,19.99
+96,Kitchen,14,39
+97,Fitness,3,34.99
+98,Food - Frozen Foods,45,3.99
+99,Food - Seafood,49,8.99
+100,Health,44,49.99
+101,Clothing - Footwear,36,69.99
+102,Automotive,2,14.99
+103,Food - Bakery,44,4.29
+104,Electronics,60,49.99
+105,Accessories,67,99.99
+106,Food - Grains,50,3.79
+107,Crafts,63,22.99
+108,Outdoor,12,39.99
+109,Food - Prepared Foods,42,5.49
+110,Fitness,76,199.99
+111,Kitchen,10,24.99
+112,Food - Condiments,4,3.49
+113,Home,42,9.99
+114,Food - Baking,96,4.29
+115,Food - Snacks,40,3.99
+116,Outdoor,13,59.99
+117,Food - Fresh Produce,98,2.99
+118,Food - Snacks,23,3.49
+119,Outdoor,66,29.99
+120,Travel,25,29.99
+121,Food - Spices,39,2.99
+122,Food - Beverages,37,3.69
+123,Food - Breakfast,3,3.99
+124,Home,99,12.99
+125,Food - Snacks,60,3.29
+126,Food - Cereal,4,4.29
+127,Food - Snacks,20,2.99
+128,Food - Condiments,91,4.29
+129,Outdoor,28,29.99
+130,Food - Frozen Meals,38,12.99
+131,Home,10,19.99
+132,Food - Supplements,20,24.99
+133,Garden,68,9.99
+134,Fitness,54,12.99
+135,Electronics,41,29.99
+136,Office,81,29.99
+137,Kitchen,12,19.99
+138,Tools,51,24.99
+139,Fitness,9,24.99
+140,Food - Dips,91,3.49
+141,Food - Grains,61,2.49
+142,Home,100,12.99
+143,Clothing - Bottoms,75,44.99
+144,Pets,28,39.99
+145,Food - Snacks,25,3.49
+146,Kitchen,20,29.99
+147,Food - Frozen Vegetables,48,5.49
+148,Food - Dairy,1,4.49
+149,Outdoor,32,29.99
+150,Food - Prepared Meals,89,6.49
+151,Food - Seafood,60,4.19
+152,Food - Beverages,28,5.99
+153,Office,20,39.99
+154,Home Improvement,42,39.99
+155,Food - Oils,49,8.99
+156,Outdoor,31,59.99
+157,Home Appliances,99,299.99
+158,Food - Frozen Vegetables,15,5.49
+159,Food - Frozen Foods,25,7.99
+160,Fitness,67,15.99
+161,Health,30,49.95
+162,Food - Sides,69,2.99
+163,Food - Meat,48,5.49
+164,Food - Snacks,23,4.19
+165,Electronics,51,25.99
+166,Food - Fruits,86,2.29
+167,Home,83,15.99
+168,Food - Snacks,60,2.79
+169,Food - Bakery,11,2.99
+170,Food - Dairy,79,4.99
+171,Fitness,32,18.99
+172,Food - Snacks,47,4.29
+173,Kitchen,14,29.99
+174,Kitchen,97,14.99
+175,Food - Bakery,37,5.49
+176,Food - Dairy,71,4.49
+177,Food - Condiments,46,3.79
+178,Audio,17,29.99
+179,Beauty,66,25
+180,Food - Snacks,69,2.89
+181,Home,5,17.99
+182,Clothing - Dresses,83,59.99
+183,Food - Condiments,4,4.29
+184,Travel,77,15.99
+185,Food - Grains,8,3.59
+186,Food - Breakfast,89,4.79
+187,Kitchen,69,79.99
+188,Home Appliances,77,299.99
+189,Food - Frozen,16,2.29
+190,Food - Snacks,96,4.29
+191,Food - Prepared Foods,8,5.49
+192,Food - Bakery,18,4.49
+193,Kitchen,91,39.99
+194,Garden,86,39.99
+195,Kitchen,52,79.99
+196,Food - Condiments,4,3.49
+197,Food - Canned Goods,65,2.79
+198,Clothing - Accessories,12,29.99
+199,Food - Beverages,61,1.5
+200,Food - Snacks,73,4.29
+201,Food - Snacks,94,2.29
+202,Pets,87,9.99
+203,Clothing - Tops,92,34.99
+204,Pets,77,49.99
+205,Automotive,99,49.99
+206,Outdoor,26,19.99
+207,Food - Frozen Foods,17,8.99
+208,Toys,42,29.99
+209,Food - Produce,14,3.99
+210,Outdoor,5,49.99
+211,Food - Salads,59,5.99
+212,Safety,7,10.99
+213,Wearable Tech,76,99.99
+214,Food - Pasta,92,1.89
+215,Outdoor,76,59.99
+216,Food - Snacks,90,2.99
+217,Accessories,36,29.99
+218,Food - Spices,8,2.99
+219,Kitchen,99,39.99
+220,Food - Snacks,80,3.49
+221,Food - Beverages,92,2.49
+222,Food - Condiments,60,2.49
+223,Clothing - Footwear,96,39.99
+224,Food - Meat,36,5.49
+225,Food - Condiments,96,5.29
+226,Food - Snacks,67,3.49
+227,Food - Cheese,26,8.99
+228,Electronics,87,199.99
+229,Food - Prepared Foods,54,5.99
+230,Clothing,46,14.99
+231,Outdoor,61,49.99
+232,Electronics,77,49.99
+233,Food - Grains,34,2.49
+234,Health,74,22.99
+235,Food - Condiments,34,3.29
+236,Audio,54,19.99
+237,Kitchen,87,39.99
+238,Food - Meat Alternatives,89,2.49
+239,Pets,63,10.99
+240,Automotive,52,49.99
+241,Food - Frozen Foods,5,3.99
+242,Food - Snacks,87,3.49
+243,Home,36,45
+244,Kitchen,11,19.99
+245,Food - Beverages,21,4.29
+246,Food - Fruits,37,2.29
+247,Accessories,73,15.49
+248,Pets,16,39.99
+249,Health,31,39.99
+250,Food - Snacks,41,2.79
+251,Food - Deli,13,4.29
+252,Outdoor,82,19.99
+253,Office,30,39.99
+254,Food - Snacks,51,3.49
+255,Clothing - Shirts,47,44.99
+256,Food - Baking,63,6.99
+257,Home Improvement,84,39.99
+258,Pets,85,39.99
+259,Food - Baking Goods,33,4.19
+260,Food - Grains,27,2.49
+261,Food - Canned Goods,43,5.79
+262,Home,12,19.99
+263,Accessories,83,29.99
+264,Food - Bakery,10,3.99
+265,Toys,89,29.99
+266,Outdoor,30,79.99
+267,Food - Sides,2,2.99
+268,Food - Prepared Foods,86,5.49
+269,Food - Bakery,82,3.49
+270,Home,86,22.99
+271,Crafts,1,22.99
+272,Food - Beverages,22,3.69
+273,Food - Sides,4,3.99
+274,Food - Salads,53,6.49
+275,Food - Condiments,45,3.99
+276,Home Appliances,15,299.99
+277,Clothing - Pants,67,49.99
+278,Food - Grains,94,3.49
+279,Food - Snacks,12,4.29
+280,Clothing - Activewear,82,29.99
+281,Kitchen,41,24.99
+282,Toys,76,139.99
+283,Food - Condiments,21,3.49
+284,Kitchen,15,19.99
+285,Kitchen,11,39.99
+286,Home,36,19.99
+287,Photography,50,249.99
+288,Home,10,39.99
+289,Food - Desserts,54,4.49
+290,Food - Canned Goods,1,1.99
+291,Pets,70,39.99
+292,Food - Snacks,3,2.29
+293,Food - Condiments,87,3.29
+294,Pets,99,14.99
+295,Food - Prepared Foods,83,5.49
+296,Food - Supplements,73,11.99
+297,Food - Snacks,90,2.49
+298,Accessories,2,24.99
+299,Food - Condiments,84,2.49
+300,Food - Vegetables,86,1.99
+301,Clothing - Tops,90,24.99
+302,Food - Condiments,35,4.49
+303,Food - Frozen Foods,92,5.99
+304,Food - Seafood,70,8.99
+305,Home,15,39.99
+306,Outdoor,15,149.99
+307,Outdoor,17,79.99
+308,Home,53,19.99
+309,Food - Snacks,73,4.99
+310,Food - Canned Goods,15,3.99
+311,Health,15,69.99
+312,Food - Breakfast,54,4.49
+313,Food - Dairy,63,1.89
+314,Food - Beverages,88,3.99
+315,Fitness,82,12.99
+316,Automotive,31,59.99
+317,Home,4,24.99
+318,Home,49,19.99
+319,Accessories,51,69.99
+320,Kitchen,93,15.99
+321,Food - Oils,50,8.49
+322,Kitchen,67,39.99
+323,Food - Dairy,80,3.49
+324,Home,51,19.99
+325,Audio,32,39.99
+326,Food - Canned Goods,22,2.99
+327,Food - Frozen Desserts,92,5.99
+328,Food - Snacks,8,2.99
+329,Food - Canned Goods,19,2.19
+330,Food - Dried Fruits,4,3.19
+331,Food - Condiments,22,4.29
+332,Home,23,22.99
+333,Pets,70,18.99
+334,Food - Bakery,23,4.79
+335,Kitchen,35,99.99
+336,Pets,60,39.99
+337,Tools,71,199.99
+338,Food - Dips,68,2.29
+339,Food - Produce,95,2.99
+340,Outdoor,32,24.99
+341,Electronics,63,49.99
+342,Kitchen,94,12.99
+343,Toys,47,14.99
+344,Kitchen,40,49.99
+345,Toys,85,10.99
+346,Garden,72,22.99
+347,Food - Soups,92,4.29
+348,Kitchen,2,89.99
+349,Office,49,99.99
+350,Electronics,46,24.99
+351,Food - Salads,59,5.99
+352,Toys,13,24.99
+353,Kitchen,47,10.99
+354,Kitchen,38,19.99
+355,Home,73,9.99
+356,Food - Fresh Produce,48,3.99
+357,Food - Deli,60,4.29
+358,Kitchen,19,29.99
+359,Outdoor,21,34.99
+360,Pets,98,8.99
+361,Home,14,29.99
+362,Food - Grains,2,5.79
+363,Clothing - Bottoms,73,79.99
+364,Food - Beverages,8,2.49
+365,Kitchen,6,29.99
+366,Food - Nuts,19,10.99
+367,Food - Salads,53,5.49
+368,Food - Meat,78,3.99
+369,Fitness,38,12.99
+370,Beauty,98,29.99
+371,Books,87,14.99
+372,Toys,77,14.99
+373,Home,93,24.99
+374,Food - Frozen Meals,53,5.99
+375,Food - Fruits,40,5.49
+376,Food - Deli,21,3.49
+377,Food - Spices,97,2.99
+378,Clothing - Footwear,1,64.99
+379,Garden,88,49.99
+380,Clothing - Bottoms,16,54.99
+381,Electronics,8,169.99
+382,Food - Canned Goods,81,2.49
+383,Fitness,20,24.99
+384,Food - Spices & Seasonings,95,2.99
+385,Food - Snacks,49,3.29
+386,Fitness,60,34.99
+387,Accessories,26,19.99
+388,Food - Snacks,45,5.99
+389,Food - Seafood,52,9.99
+390,Electronics,92,169.99
+391,Food - Grains,51,2.99
+392,Accessories,26,24.99
+393,Food - Meat,79,5.99
+394,Food - Condiments,24,2.49
+395,Garden,96,24.99
+396,Electronics,36,12.99
+397,Clothing - Outerwear,35,89.99
+398,Home Appliances,1,199.99
+399,Food - Condiments,31,4.49
+400,Food,99,29.99
+401,Food - Vegetables,29,3.79
+402,Food - Grains,55,2.99
+403,Kitchen,75,59.99
+404,Accessories,65,22.99
+405,Home,76,45
+406,Food - Prepared Foods,20,4.29
+407,Garden,10,24.99
+408,Home,27,12.99
+409,Travel,53,24.99
+410,Food - Bakery,89,3.99
+411,Food - Frozen Foods,12,5.49
+412,Food - Grains,88,1.79
+413,Food - Frozen Foods,81,4.99
+414,Outdoor,58,29.99
+415,Food - Beverages,36,1.99
+416,Fitness,21,22.99
+417,Food - Baking,52,2.49
+418,Kitchen,27,29.99
+419,Food - Condiments,19,4.29
+420,Food - Soups,18,3.29
+421,Food - Grains,99,2.49
+422,Kitchen,71,39.99
+423,Smart Home,28,89.99
+424,Kitchen,19,19.99
+425,Food - Snacks,46,5.99
+426,Food - Sauces,90,2.79
+427,Photography,20,29.99
+428,Food - Condiments,13,4.29
+429,Art Supplies,82,19.99
+430,Fitness,73,29.99
+431,Office,81,5.99
+432,Home,41,24.99
+433,Home Improvement,4,39.99
+434,Kitchen,52,24.99
+435,Garden,25,19.99
+436,Food - Dressings,91,3.49
+437,Home,36,19.99
+438,Kitchen,7,19.99
+439,Food - Frozen Meals,6,5.99
+440,Pets,94,199.99
+441,Toys,71,19.99
+442,Food - Snacks,95,3.49
+443,Food - Snacks,41,2.99
+444,Food - Frozen Foods,68,5.99
+445,Kitchen,64,29.99
+446,Food - Condiments,49,3.49
+447,Clothing - Outerwear,60,59.99
+448,Food - Soups,67,3.29
+449,Food - Bakery,81,3.29
+450,Food - Snacks,84,3.99
+451,Fitness,91,12.99
+452,Food - Snacks,46,3.29
+453,Outdoor,48,49.99
+454,Food - Canned Goods,86,1.29
+455,Food - Pasta,37,2.89
+456,Electronics,67,49.99
+457,Garden,45,39.99
+458,Audio,27,99.99
+459,Food - Meat,79,8.99
+460,Electronics,7,49.99
+461,Food - Condiments,76,4.79
+462,Home,21,39.99
+463,Office,98,19.99
+464,Health,84,14.99
+465,Outdoor,34,9.99
+466,Smart Home,11,149.99
+467,Automotive,64,59.99
+468,Food - Frozen Foods,77,7.99
+469,Outdoor,17,399.99
+470,Home,64,34.99
+471,Food - Beverages,64,3.29
+472,Electronics,62,29.99
+473,Food - Canned Goods,39,1.29
+474,Food - Pasta,10,3.79
+475,Food - Snacks,98,4.19
+476,Food - Snacks,8,3.99
+477,Food - Pasta,84,4.99
+478,Food - Condiments,56,1.99
+479,Food - Snacks,16,3.29
+480,Food - Vegetables,40,4.99
+481,Outdoor,41,29.99
+482,Pets,34,12.99
+483,Food - Breakfast,47,1.99
+484,Garden,36,15.99
+485,Fitness,1,99.99
+486,Books,21,14.99
+487,Toys,50,129.99
+488,Home,54,34.99
+489,Fitness,35,12.99
+490,Food - Frozen Vegetables,27,5.49
+491,Food - Condiments,82,5.49
+492,Home,85,14.99
+493,Food - Condiments,47,3.69
+494,Home,68,19.99
+495,Food - Snacks,3,3.99
+496,Kitchen,54,39.99
+497,Food - Canned Goods,88,3.79
+498,Food - Grains,27,3.99
+499,Food - Condiments,40,2.49
+500,Food - Condiments,87,4.99
+501,Health,66,20.99
+502,Accessories,51,9.99
+503,Food - Snacks,71,2.79
+504,Garden,21,59.99
+505,Food - Bakery,13,4.99
+506,Food - Prepared Meals,1,8.99
+507,Kitchen,23,39.99
+508,Food - Cereal,72,4.49
+509,Food - Meat,55,12.99
+510,Kitchen,48,12.99
+511,Gaming,99,89.99
+512,Food - Snacks,83,1.39
+513,Garden,79,24.99
+514,Food - Prepared Foods,18,5.99
+515,Food - Snacks,73,4.49
+516,Food - Breakfast,66,4.79
+517,Garden,58,29.99
+518,Home,88,39.99
+519,Food - Bakery,68,4.79
+520,Kitchen,42,24.99
+521,Pets,17,39.99
+522,Travel,69,12.99
+523,Food - Frozen Foods,88,4.99
+524,Pets,29,29.99
+525,Garden,61,24.99
+526,Food - Condiments,79,3.99
+527,Kitchen,58,49.99
+528,Clothing - Dresses,77,59.99
+529,Food - Condiments,44,3.69
+530,Accessories,21,19.99
+531,Food - Frozen Foods,36,4.99
+532,Outdoor,98,27.99
+533,Electronics,55,12.99
+534,Outdoor,5,29.99
+535,Food - Canned Soups,28,4.49
+536,Food - Vegetables,30,3.99
+537,Clothing - Tops,54,22.99
+538,Health,50,49.99
+539,Accessories,21,19.99
+540,Garden,100,49.99
+541,Office,52,29.99
+542,Outdoor,20,24.99
+543,Food - Prepared Meals,78,5.49
+544,Food - Snacks,88,3.49
+545,Food - Snacks,33,2.99
+546,Food - Prepared Foods,27,5.79
+547,Food - Cooking Essentials,74,2.49
+548,Food - Breakfast,58,2.49
+549,Clothing - Outerwear,85,129.99
+550,Food - Produce,67,3.99
+551,Outdoor,87,79.99
+552,Pets,62,39.99
+553,Outdoor,18,49.99
+554,Home,39,22.99
+555,Safety,79,10.99
+556,Outdoor,66,59.99
+557,Food - Frozen Foods,44,8.99
+558,Garden,67,39.99
+559,Food - Dairy,18,1.29
+560,Food - Spices,90,4.99
+561,Food - Breakfast,75,4.49
+562,Food - Snacks,84,2.29
+563,Food - Dairy Alternatives,81,2.79
+564,Food - Snacks,36,3.79
+565,Food - Canned Soups,14,3.99
+566,Outdoor,23,159.99
+567,Food - Canned Goods,64,5.79
+568,Kitchen,99,14.99
+569,Food - Snacks,80,1.99
+570,Food - Meat,62,9.99
+571,Food - Salads,51,4.99
+572,Home,100,12.99
+573,Food - Meat,48,9.99
+574,Food - Dairy,81,1.99
+575,Food - Bakery,42,4.19
+576,Kitchen,66,12.99
+577,Home,68,59.99
+578,Food - Breakfast,74,4.79
+579,Clothing - Sweaters,73,39.99
+580,Food - Dairy,2,4.49
+581,Food - Prepared Foods,26,8.49
+582,Outdoor,78,39.99
+583,Food - Vegetables,46,1.29
+584,Health,21,59.99
+585,Food - Soups,17,2.99
+586,Food - Bakery,58,4.79
+587,Office,77,29.99
+588,Kitchen,41,14.99
+589,Food - Snacks,5,2.99
+590,Health,7,199.99
+591,Clothing - Pants,20,54.99
+592,Health,46,19.99
+593,Food - Bakery,22,3.49
+594,Food - Meat,43,6.99
+595,Food - Snacks,97,3.99
+596,Travel,63,15.99
+597,Tools,17,199.99
+598,Food - Seafood,99,6.49
+599,Accessories,45,12.99
+600,Pets,77,18.99
+601,Fitness,10,39.99
+602,Outdoor,66,19.99
+603,Food - Frozen Foods,79,5.99
+604,Kitchen,29,44.99
+605,Outdoor,9,27.99
+606,Garden,51,15.99
+607,Garden,23,24.99
+608,Kitchen,67,14.99
+609,Food - Snacks,37,5.49
+610,Food - Meat,85,5.49
+611,Food - Beverages,5,5.99
+612,Food - Breakfast,31,4.99
+613,Food - Baking,67,5.99
+614,Outdoor,91,29.99
+615,Food - Grains,64,2.49
+616,Food - Condiments,78,4.29
+617,Photography,27,49.99
+618,Garden,51,22.99
+619,Kitchen,97,59.99
+620,Food - Snacks,85,2.99
+621,Fitness,46,14.99
+622,Food - Snacks,43,4.99
+623,Beauty,86,29.99
+624,Automotive,43,14.99
+625,Home Improvement,22,39.99
+626,Accessories,33,19.99
+627,Home,96,14.99
+628,Food - Snacks,76,3.49
+629,Food - Meat,75,8.99
+630,Outdoor,38,149.99
+631,Food - Meat,32,3.99
+632,Food - Salads,41,5.49
+633,Food - Baking,7,3.99
+634,Food - Meat,20,3.99
+635,Food - Frozen Foods,90,5.49
+636,Food - Snacks,26,5.99
+637,Food - Beverages,45,3.29
+638,Accessories,3,12.99
+639,Food - Baking Goods,47,3.99
+640,Food - Frozen Meals,74,8.99
+641,Food - Snacks,43,3.49
+642,Health,44,49.99
+643,Fitness,26,59.99
+644,Kitchen,47,11.99
+645,Food - Condiments,87,3.99
+646,Clothing - Outerwear,84,79.99
+647,Clothing - Outerwear,45,99.99
+648,Home,73,35
+649,Food - Frozen Foods,73,2.99
+650,Toys,55,129.99
+651,Photography,48,29.99
+652,Food - Baking,16,5.59
+653,Food - Grains,94,1.49
+654,Food - Sauces,48,3.99
+655,Gaming,53,299.99
+656,Food - Snacks,81,3.59
+657,Electronics,28,49.99
+658,Food - Salads,49,3.29
+659,Fitness,67,15.99
+660,Food - Beverages,59,4.99
+661,Home,87,29.99
+662,Food - Pasta,64,4.99
+663,Food - Breakfast,39,1.99
+664,Food - Condiments,42,3.99
+665,Food - Grains,100,2.49
+666,Smart Home,55,19.99
+667,Toys,35,29.99
+668,Clothing - Activewear,21,24.99
+669,Clothing,88,64.99
+670,Kitchen,53,49.99
+671,Food - Produce,2,6.99
+672,Food - Dressing,88,3.39
+673,Food - Dairy,6,2.99
+674,Toys,14,24.99
+675,Clothing - Outerwear,43,129.99
+676,Food - Baking,96,5.99
+677,Food - Snacks,97,2.99
+678,Food - Dairy,99,2.99
+679,Outdoor,56,29.99
+680,Smart Home,85,99.99
+681,Food - Sauces,23,3.49
+682,Clothing,43,49.99
+683,Kitchen,35,39.99
+684,Food - Beverages,54,1.5
+685,Food - Snacks,80,2.99
+686,Food - Snacks,14,4.99
+687,Clothing - Bottoms,7,29.99
+688,Food - Condiments,92,6.49
+689,Crafts,34,34.99
+690,Food - Condiments,90,3.29
+691,Food - Condiments,99,4.29
+692,Food - Meat,8,7.99
+693,Food - Produce,25,2.99
+694,Toys,80,19.99
+695,Food - Frozen Foods,56,4.99
+696,Food - Snacks,15,5.99
+697,Food - Frozen Food,80,5.99
+698,Photography,74,49.99
+699,Food - Bakery,34,4.19
+700,Food,27,79.99
+701,Kitchen,11,30
+702,Accessories,76,69.99
+703,Baby,52,79.99
+704,Food - Snacks,50,1.99
+705,Clothing - Tops,34,24.99
+706,Food - Condiments,46,2.79
+707,Smart Home,60,19.99
+708,Food - Frozen Meals,91,14.99
+709,Food - Condiments,6,4.49
+710,Food - Prepared Meals,35,7.99
+711,Food - Snacks,73,3.49
+712,Food - Health Foods,14,7.99
+713,Food - Breakfast,59,2.99
+714,Food - Produce,9,1.89
+715,Food - Condiments,47,3.49
+716,Accessories,67,22.99
+717,Food - Snacks,12,3.29
+718,Electronics,84,39.99
+719,Food - Canned Goods,17,3.49
+720,Food - Condiments,93,1.99
+721,Clothing - Accessories,62,29.99
+722,Food - Baking Goods,38,3.99
+723,Computers,5,39.99
+724,Food - Frozen Food,17,3.99
+725,Food - Sides,90,3.99
+726,Food - Grains,10,1.49
+727,Food - Frozen Foods,36,6.49
+728,Electronics,88,39.99
+729,Food - Condiments,67,6.49
+730,Clothing - Footwear,43,49.99
+731,Food - Meat,61,12.99
+732,Food - Condiments,92,2.59
+733,Home,83,29.99
+734,Food - Beverages,45,2.99
+735,Food - Breakfast,68,2.99
+736,Food - Condiments,82,4.49
+737,Toys,81,29.99
+738,Smart Home,80,29.99
+739,Food - Snacks,16,3.99
+740,Pets,70,12.99
+741,Food - Baking,8,2.49
+742,Clothing - Activewear,30,39.99
+743,Food - Sauces,17,2.49
+744,Fitness,47,34.99
+745,Food - Canned Goods,3,2.49
+746,Kitchen,53,19.99
+747,Food - Breakfast,72,4.29
+748,Art Supplies,4,19.99
+749,Pets,80,39.99
+750,Home,98,19.99
+751,Food - Beverages,7,3.49
+752,Food - Dairy,11,3.29
+753,Kitchen,42,19.99
+754,Food - Snacks,13,3.49
+755,Home,81,16.99
+756,Clothing - Bottoms,19,29.99
+757,Food - Snacks,30,3.99
+758,Smart Home,13,149.99
+759,Home,46,29.99
+760,Home,97,29.99
+761,Food - Prepared Meals,7,5.99
+762,Food - Snacks,69,3.29
+763,Food - Frozen Foods,15,4.29
+764,Food - Beverages,34,3.79
+765,Food - Condiments,19,2.99
+766,Home,28,15.99
+767,Furniture,6,199.99
+768,Food - Bakery,94,9.99
+769,Food - Bakery,6,3.99
+770,Clothing - Tops,12,59.99
+771,Crafts,18,99.99
+772,Pets,6,109.99
+773,Home,93,39.99
+774,Food - Snacks,61,5.29
+775,Food - Canned Goods,51,1.29
+776,Fitness,65,14.99
+777,Outdoor,5,49.99
+778,Outdoor,46,39.99
+779,Kitchen,22,19.99
+780,Outdoor,88,49.99
+781,Clothing - Footwear,88,79.99
+782,Outdoor,80,29.99
+783,Kitchen,1,19.99
+784,Home,48,69.99
+785,Food - Desserts,86,4.99
+786,Food - Baking,57,4.99
+787,Garden,69,49.99
+788,Kitchen,14,24.99
+789,Pets,60,39.99
+790,Food - Dairy,49,3.49
+791,Food - Baking,57,3.79
+792,Food - Frozen Foods,60,5.99
+793,Food - Snacks,46,3.49
+794,Food - Condiments,64,2.99
+795,Food - Frozen Desserts,88,4.99
+796,Food - Condiments,18,3.49
+797,Food - Beverages,100,5.99
+798,Food - Beverages,56,1.5
+799,Outdoor,54,79.99
+800,Food - Sauces,36,2.79
+801,Kitchen,5,49.99
+802,Pets,31,39.99
+803,Food - Snacks,92,3.29
+804,Food - Canned Goods,85,1.29
+805,Electronics,84,129.99
+806,Food - Meats,5,6.49
+807,Food - Bakery,37,4.99
+808,Smart Home,34,24.99
+809,Travel,29,24.99
+810,Outdoor,62,29.99
+811,Kitchen,26,39.99
+812,Clothing - Tops,63,22.99
+813,Travel,32,12.99
+814,Toys,17,29.99
+815,Accessories,61,19.99
+816,Food - Condiments,52,3.99
+817,Food - Frozen Foods,58,4.99
+818,Electronics,100,29.99
+819,Garden,85,24.99
+820,Food - Frozen Foods,3,3.59
+821,Outdoor,88,24.99
+822,Food - Frozen Meals,12,5.99
+823,Food - Meat,78,9.99
+824,Kitchen,10,14.99
+825,Food - Grains,79,1.49
+826,Pets,21,19.99
+827,Home,86,34.99
+828,Pets,83,14.99
+829,Food - Frozen Foods,23,5.99
+830,Pets,23,18.99
+831,Food - Snacks,55,3.99
+832,Food - Snacks,42,5.99
+833,Food - Condiments,4,5.49
+834,Electronics,56,49.99
+835,Home,38,24.99
+836,Food - Produce,82,2.49
+837,Food - Baking,49,5.59
+838,Food - Breakfast,84,4.99
+839,Outdoor,26,49.99
+840,Food - Prepared Meals,61,6.49
+841,Fitness,36,29.99
+842,Food - Meat,89,15.99
+843,Outdoor,81,49.99
+844,Fitness,85,29.99
+845,Garden,69,22.99
+846,Food - Seasonings,25,3.29
+847,Food - Condiments,82,3.99
+848,Beauty,33,29.99
+849,Beauty,41,99.99
+850,Food - Beverages,48,1.99
+851,Travel,8,39.99
+852,Footwear,78,79.99
+853,Food - Condiments,37,3.49
+854,Food - Spices,21,2.49
+855,Kitchen,40,34.99
+856,Food - Grains,29,2.99
+857,Office,37,29.99
+858,Food - Beverages,89,3.69
+859,Food - Prepared Meals,69,4.49
+860,Food - Canned Goods,10,2.59
+861,Kitchen,45,24.99
+862,Office,82,29.99
+863,Food - Cereal,30,4.49
+864,Food - Snacks,16,3.79
+865,Audio,81,59.99
+866,Smart Home,71,89.99
+867,Food - Salads,22,5.99
+868,Kitchen,53,59.99
+869,Food - Snacks,68,12.99
+870,Home,66,49.99
+871,Food - Frozen Foods,50,6.49
+872,Fitness,21,14.99
+873,Food - Breakfast,16,2.99
+874,Food - Pasta,42,4.99
+875,Food - Condiments,7,3.49
+876,Food - Snacks,94,4.99
+877,Food - Baking,52,2.29
+878,Food - Condiments,22,3.29
+879,Food - Frozen Foods,96,4.99
+880,Food - Baking,100,3.29
+881,Toys,86,22.99
+882,Fitness,84,12.99
+883,Food - Frozen Food,49,10.99
+884,Food - Grains,84,1.99
+885,Home,88,19.99
+886,Food - Condiments,86,2.99
+887,Fitness,9,22.99
+888,Toys,72,22.99
+889,Fitness,67,29.99
+890,Food - Meats,29,5.49
+891,Food - Canned Goods,2,3.49
+892,Food - Snacks,83,5.49
+893,Fitness,10,29.99
+894,Travel,88,22.99
+895,Clothing - Dresses,66,79.99
+896,Food - Meat,28,9.99
+897,Clothing - Bottoms,87,59.99
+898,Food - Frozen Vegetables,34,4.99
+899,Food - Produce,50,0.89
+900,Food - Condiments,75,3.99
+901,Food - Condiments,74,2.99
+902,Outdoor,19,19.99
+903,Food - Snacks,4,7.19
+904,Food - Baking & Cooking,12,2.79
+905,Food - Nuts,61,10.99
+906,Home,98,34.99
+907,Food - Snacks,3,2.99
+908,Travel,97,39.99
+909,Food - Frozen Foods,94,6.99
+910,Clothing - Outerwear,27,69.99
+911,Fitness,42,29.99
+912,Pets,86,39.99
+913,Food - Breakfast,90,2.49
+914,Food - Dips,71,4.29
+915,Outdoor,60,39.99
+916,Food - Condiments,44,4.49
+917,Garden,95,49.99
+918,Food - Bakery,70,2.49
+919,Travel,35,29.99
+920,Outdoor,32,79.99
+921,Food - Frozen Foods,21,3.99
+922,Food - Meal Kits,70,8.49
+923,Food - Dairy,24,1.99
+924,Food - Frozen Foods,4,5.49
+925,Food - Canned Goods,83,5.79
+926,Food - Beverages,24,1.99
+927,Food - Prepared Meals,85,6.49
+928,Food - Condiments,31,3.49
+929,Food - Seafood,95,4.19
+930,Kitchen,12,15.99
+931,Photography,17,14.99
+932,Tools,82,24.99
+933,Food - Snacks,88,4.99
+934,Office,24,19.99
+935,Kitchen,90,14.99
+936,Kitchen,25,59.99
+937,Fitness,63,14.99
+938,Food - Condiments,29,3.29
+939,Health,71,79.99
+940,Outdoor,35,19.99
+941,Food - Grains,63,2.59
+942,Health,71,89.99
+943,Audio,53,79.99
+944,Clothing - Coats,43,129.99
+945,Food - Frozen Meals,98,14.99
+946,Smart Home,24,119.99
+947,Outdoor,31,49.99
+948,Kitchen,9,29.99
+949,Food - Beverages,64,2.99
+950,Kitchen,71,12.99
+951,Food - Frozen Foods,43,4.49
+952,Outdoor,34,29.99
+953,Food - Snacks,52,2.89
+954,Food - Dairy Alternatives,43,1.99
+955,Outdoor,62,299.99
+956,Clothing - Tops,74,34.99
+957,Health,87,59.99
+958,Home,9,19.99
+959,Toys,89,19.99
+960,Food - Baking & Cooking,11,2.99
+961,Food - Baking,70,2.49
+962,Food - Meats,89,9.99
+963,Food - Snacks,37,1.39
+964,Home,75,39.99
+965,Fitness,43,14.99
+966,Pets,24,49.99
+967,Food - Bakery,40,2.99
+968,Kitchen,93,99.99
+969,Pets,91,24.99
+970,Food - Frozen Food,99,10.99
+971,Travel,55,9.99
+972,Clothing - Outerwear,32,69.99
+973,Pets,28,14.99
+974,Food - Dairy,31,3.49
+975,Food - Prepared Meals,43,7.99
+976,Kitchen,1,59.99
+977,Home,100,39.99
+978,Food - Produce,28,4.49
+979,Electronics,48,39.99
+980,Food - Snacks,24,4.29
+981,Home,13,34.99
+982,Food - Grains,29,2.49
+983,Kitchen,4,79.99
+984,Outdoor,12,24.99
+985,Pets,45,69.99
+986,Clothing - Sweaters,32,39.99
+987,Food - Soups,78,3.99
+988,Food - Condiments,15,3.29
+989,Outdoor,81,59.99
+990,Food - Condiments,91,2.99
+991,Food - Soups,54,2.99
+992,Food - Baking,65,3.29
+993,Electronics,98,49.99
+994,Toys,4,34.99
+995,Food - Frozen Foods,66,4.99
+996,Garden,98,34.99
+997,Food - Meat,33,5.49
+998,Food - Breakfast,61,4.99
+999,Food - Canned Goods,58,2.49
+1000,Smart Home,30,24.99

@@ -4,10 +4,10 @@
 ## How to Run This Project
 2. Run the sevices:
     * Navigate to the server file directory: cd server
-    * Start the discovery service: node discovery-server.js
-    * Start the stock service: node stock.js
-    * Start the get stock service: node getstock.js
-    * Start the chat service: node chat.js
+    * Start the discovery service: node discoveryServices.js
+    * Start the stock service: node stockServices.js
+    * Start the get stock service: node getStockService.js
+    * Start the chat service: node chatService.js
 3. Run the client application
     * Navigate to the server file directory: cd client
     * Start the application: node app.js

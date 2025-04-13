@@ -10,14 +10,9 @@ const STOCK_PROTO_PATH = path.join(__dirname, '../proto/stock.proto');
 const GETSTOCK_PROTO_PATH = path.join(__dirname, '../proto/getstock.proto');
 const CHAT_PROTO_PATH = path.join(__dirname, '../proto/chat.proto');
 
-// Load the packages separately
-const discoveryDefinition = protoLoader.loadSync(DISCOVERY_PROTO_PATH, {
-  keepCase: true,
-  longs: String,
-  enums: String,
-  defaults: true,
-  oneofs: true
-});
+
+const discoveryDefinition = protoLoader.loadSync(DISCOVERY_PROTO_PATH, {});
+
 const stockDefinition = protoLoader.loadSync(STOCK_PROTO_PATH);
 const getStockDefinition = protoLoader.loadSync(GETSTOCK_PROTO_PATH);
 const chatDefinition = protoLoader.loadSync(CHAT_PROTO_PATH);

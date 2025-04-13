@@ -1,20 +1,43 @@
-// Function to fetch the stock list (existing code)
-fetch('/api/stocks')
-  .then(response => response.json())
-  .then(data => {
-    const list = document.getElementById('stock-list');
-    const formatter = new Intl.NumberFormat('en-IE', { style: 'currency', currency: 'EUR' }); // Format as € currency
+// Show Stock List
+function toggleStockList() {
+  const container = document.getElementById("stock-list-container");
+  const button = document.querySelector("button[onclick='toggleStockList()']");
 
-    data.forEach(stock => {
-      const item = document.createElement('li');
-      item.textContent = `${stock.name} (Quantity: ${stock.quantity}, Price: ${formatter.format(stock.price)})`;
-      list.appendChild(item);
-    });
-  })
-  .catch(error => console.error('Error fetching stock list:', error));
+  if (container.style.display === "none") {
+    container.style.display = "block";
+    button.innerText = "Hide Stock List";
+    getStockList(); // Get stock list when shown
+  } else {
+    container.style.display = "none";
+    button.innerText = "Show Stock List";
+  }
+}
 
+//Get Stock List
+function getStockList() {
+  fetch('/api/stocks')
+    .then(response => response.json())
+    .then(data => {
+      const list = document.getElementById('stock-list');
+      list.innerHTML = ""; //  Clear list before adding new items
+      const formatter = new Intl.NumberFormat('en-IE', { style: 'currency', currency: 'EUR' });//format currency to Euro
+
+      data.forEach(stock => {
+        const item = document.createElement('li');
+        item.textContent = `${stock.name} (Quantity: ${stock.quantity}, Price: ${formatter.format(stock.price)})`;
+        list.appendChild(item);
+      });
+    })
+    .catch(error => console.error('Error could not fetch stock list:', error));
+}
+
+// Get Stock by ID
 function fetchStockById() {
   const stockId = document.getElementById('stock-id-input').value.trim();
+  if (!stockId) {
+    alert('Please enter a Stock ID');
+    return;
+  }
   fetch(`/api/stocks/${stockId}`)
     .then(response => {
       if (!response.ok) {
@@ -23,9 +46,8 @@ function fetchStockById() {
       return response.json();
     })
     .then(data => {
-      const formatter = new Intl.NumberFormat('en-IE', { style: 'currency', currency: 'EUR' }); // Format as € currency
-      const resultContainer = document.getElementById('stock-result');
-      resultContainer.innerHTML = `
+      const formatter = new Intl.NumberFormat('en-IE', { style: 'currency', currency: 'EUR' });
+      document.getElementById('stock-result').innerHTML = `
         <strong>Name:</strong> ${data.name} <br>
         <strong>Quantity:</strong> ${data.quantity} <br>
         <strong>Price:</strong> ${formatter.format(data.price)}
@@ -33,40 +55,45 @@ function fetchStockById() {
     })
     .catch(error => {
       document.getElementById('stock-result').innerText = error.message;
-      console.error('Error fetching stock item:', error);
+      console.error('Error could not fetch stock item:', error);
     });
 }
 
-// Function to send a chat message via a POST request to /api/chat
+// Chat Pop-Up open and close functioons
+function openChat() { document.getElementById("chatPopup").style.display = "block"; }
+function closeChat() { document.getElementById("chatPopup").style.display = "none"; }
+
+// Send Chat Message via API
 function sendChat() {
-  const user = document.getElementById('chat-user').value.trim();
-  const message = document.getElementById('chat-message').value.trim();
+  const user = document.getElementById("chat-user").value.trim();
+  const message = document.getElementById("chat-message").value.trim();
   if (!user || !message) {
-    alert('Please enter both your name and a message.');
+    alert("Please enter both your name and a message!");
     return;
   }
+
   fetch('/api/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ user, message })
   })
-  .then(response => {
-    if (!response.ok) {
-      return response.text().then(text => { throw new Error(text); });
-    }
-    return response.json();
-  })
-  .then(data => {
-    // Display the server's response in the chat display area.
-    const chatDisplay = document.getElementById('chat-display');
-    // Append both the user's message and the chat service reply.
-    chatDisplay.innerHTML += `<p><strong>${user}:</strong> ${message}</p>`;
-    chatDisplay.innerHTML += `<p><em>Server:</em> ${data.response}</p>`;
-    // Optionally, clear the input box.
-    document.getElementById('chat-message').value = '';
-  })
-  .catch(error => {
-    console.error('Error sending chat message:', error);
-    alert('Chat error: ' + error.message);
-  });
+    .then(response => {
+      if (!response.ok) {
+        return response.text().then(text => { throw new Error(text); });
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Append both the user's message and the server's response
+      const chatDisplay = document.getElementById("chat-display");
+      chatDisplay.innerHTML += `<p><strong>${user}:</strong> ${message}</p>`;
+      chatDisplay.innerHTML += `<p><em>Stock Robot:</em> ${data.response}</p>`;
+
+      // Clear the input box after sending message
+      document.getElementById("chat-message").value = '';
+    })
+    .catch(error => {
+      console.error("Error sending chat message:", error);
+      alert("Chat error: " + error.message);
+    });
 }

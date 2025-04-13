@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package chat;
 
-// Service and other definitions follow
 service ChatService {
   rpc SendMessage (ChatRequest) returns (ChatResponse);
 }

@@ -2,16 +2,47 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const morgan = require('morgan');
+//const logger = require('./logger');
+const port = 3000; //define port no.
+const logger = require('../server/logger'); //Path from server
 
-// Middleware to parse JSON bodies (must come before the routes)
 app.use(express.json());
 
-// Require your modules
+//Logging HTTP requests using Morgan
+app.use(morgan('combined', { stream: require('fs').createWriteStream('./logs/access.log', { flags: 'a' }) }));
+
+//Log API activity
+app.use((req, res, next) => {
+  logger.info(`Received request: ${req.method} ${req.url}`);
+  next();
+});
+
+// get time and date
+app.use((req, res, next) => {
+  const startTime = Date.now();
+
+  res.on('finish', () => { //Log after response is sent
+    const duration = Date.now() - startTime;
+    logger.info(`${req.method} ${req.url} processed in ${duration}ms`);
+  });
+
+  next();
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  logger.error(`Error: ${err.message}`);
+  res.status(500).json({ error: "Internal Server Error" });
+});
+
+
+// Required modules
 const getStockList = require('./getStockList');
 const getStockById = require('./getStockById');
-const sendChatMessage = require('./clientChat');  // Your chat module
+const sendChatMessage = require('./clientChat');
 
-// REST endpoint to get the full stock list
+// stock list
 app.get('/api/stocks', (req, res) => {
   getStockList((err, data) => {
     if (err) return res.status(500).send(err.message);
@@ -19,7 +50,7 @@ app.get('/api/stocks', (req, res) => {
   });
 });
 
-// REST endpoint to get a single stock by ID
+// Stock by ID
 app.get('/api/stocks/:id', (req, res) => {
   const stockId = req.params.id.trim();
   console.log(`Received GET request for stock ID: ${stockId}`);
@@ -29,7 +60,7 @@ app.get('/api/stocks/:id', (req, res) => {
   });
 });
 
-// REST endpoint for chat messages
+// Chat messages
 app.post('/api/chat', (req, res) => {
   const chatData = req.body;
   if (!chatData || !chatData.user || !chatData.message) {
@@ -42,9 +73,9 @@ app.post('/api/chat', (req, res) => {
   });
 });
 
-// Serve static files from the "public" folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Start the server on port 3000
-const port = 3000;
-app.listen(port, () => console.log(`REST API server running at http://localhost:${port}`));
+app.listen(port, () => {
+  console.log(`REST API server running at http://localhost:${port}`)
+  });

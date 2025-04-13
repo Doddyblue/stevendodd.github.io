@@ -8,21 +8,38 @@
   <script src="script.js"></script>
 </head>
 <body>
-  <h1>Stock List</h1>
-  <!-- prints curent stock -->
-  <ul id="stock-list"></ul>
 
-  <!-- User input to seatch stock by ID No.-->
+  <h1>Smart Warehouse</h1>
+
+  <!-- Search Stock by ID -->
   <input type="text" id="stock-id-input" placeholder="Enter Stock ID">
-  <button onclick="fetchStockById()">Search Stock</button>
+  <button onclick="fetchStockById()">Search Stock by ID</button>
   <div id="stock-result"></div>
 
   <hr>
-  <!-- live chat you must enter your name then your message -->
-  <h2>Live Chat</h2>
-  <input type="text" id="chat-user" placeholder="Your name">
-  <input type="text" id="chat-message" placeholder="Enter message">
-  <button onclick="sendChat()">Send Message</button>
-  <div id="chat-display"></div>
+
+  <!-- Toggle Stock List Button -->
+  <button onclick="toggleStockList()">Show Stock List</button>
+  <div id="stock-list-container" style="display: none;">
+    <h2>Stock List</h2>
+    <ul id="stock-list"></ul>
+  </div>
+
+  <hr>
+
+  <!-- Live Chat Pop-up -->
+  <button onclick="openChat()">Open Chat</button>
+
+  <div id="chatPopup" class="chat-modal">
+    <div class="chat-content">
+      <span class="close" onclick="closeChat()">&times;</span>
+      <h2>Live Chat</h2>
+      <input type="text" id="chat-user" placeholder="Your name">
+      <input type="text" id="chat-message" placeholder="Enter message">
+      <button onclick="sendChat()">Send Message</button>
+      <div id="chat-display"></div>
+    </div>
+  </div>
+
 </body>
 </html>

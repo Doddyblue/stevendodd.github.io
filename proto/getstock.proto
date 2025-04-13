@@ -7,11 +7,11 @@ service GetStockService {
 }
 
 message GetStockRequest {
-  string id = 1; // Make sure this matches what the server expects
+  string id = 1;
 }
 
 message GetStockResponse {
-  Stock item = 1; // Reference Stock properly
+  Stock item = 1; 
 }
 
 message Stock {

@@ -13,8 +13,12 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.13.2",
     "@grpc/proto-loader": "^0.7.13",
+    "csv-parser": "^3.2.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "google-protobuf": "^3.21.4"
+    "fs-extra": "^11.3.0",
+    "google-protobuf": "^3.21.4",
+    "morgan": "^1.10.0",
+    "winston": "^3.17.0"
   }
 }

@@ -3,24 +3,10 @@ const protoLoader = require('@grpc/proto-loader');
 const path = require('path');
 const { getServiceAddress } = require('./clientDiscovery');
 
-// Define the path to the correct proto file
+// Load gRPC proto files
 const GETSTOCK_PROTO_PATH = path.join(__dirname, '../proto/getstock.proto');
-
-// Load the proto definition with options
-const getStockDefinition = protoLoader.loadSync(GETSTOCK_PROTO_PATH, {
-  keepCase: true,
-  longs: String,
-  enums: String,
-  defaults: true,
-  oneofs: true
-});
-const getStockProto = grpc.loadPackageDefinition(getStockDefinition).getstock; // Ensure correct package name
-
-// Sample stock data (if not using database)
-const stockItems = [
-  { id: "1", name: "Apple Inc.", quantity: 100, price: 150.5 },
-  { id: "2", name: "Microsoft Corp.", quantity: 50, price: 299.99 }
-];
+const getStockDefinition = protoLoader.loadSync(GETSTOCK_PROTO_PATH, {});
+const getStockProto = grpc.loadPackageDefinition(getStockDefinition).getstock;
 
 /**
  * Retrieves a stock item by ID via gRPC.
@@ -32,17 +18,18 @@ function getStockById(stockId, callback) {
 
     // Look up the service address using discovery
     getServiceAddress("GetStockService", (err, address) => {
-        if (err) {
-            console.error("Error retrieving GetStockService address:", err.message);
-            return callback(err);
+        if (err || !address) {
+            console.error("Service discovery failed, using default address: 127.0.0.1:50052");
+            address = "127.0.0.1:50052"; // Hardcoded fallback
         }
+
         console.log(`Discovered GetStockService at address: ${address}`);
 
         const getStockClient = new getStockProto.GetStockService(address, grpc.credentials.createInsecure());
 
         getStockClient.GetStockById({ id: stockId }, (err, response) => {
             if (err) {
-                console.error("Error calling GetStockById RPC:", err.message);
+                console.error("gRPC error:", err.code, "-", err.message);
                 return callback(err);
             }
 
@@ -52,6 +39,7 @@ function getStockById(stockId, callback) {
                 return callback(error);
             }
 
+            console.log("Stock Retrieved:", response.item);
             callback(null, response.item);
         });
     });
@@ -59,14 +47,3 @@ function getStockById(stockId, callback) {
 
 // Export function properly
 module.exports = getStockById;
-
-// Standalone testing
-if (require.main === module) {
-    getStockById("1", (err, item) => {
-        if (err) {
-            console.error("Test call failed:", err);
-        } else {
-            console.log("Retrieved stock item:", item);
-        }
-    });
-}
