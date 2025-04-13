@@ -18,7 +18,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// get time and date
+// Logging process with time and date including procesing duration
 app.use((req, res, next) => {
   const startTime = Date.now();
 
