@@ -8,11 +8,7 @@ const GETSTOCK_PROTO_PATH = path.join(__dirname, '../proto/getstock.proto');
 const getStockDefinition = protoLoader.loadSync(GETSTOCK_PROTO_PATH, {});
 const getStockProto = grpc.loadPackageDefinition(getStockDefinition).getstock;
 
-/**
- * Retrieves a stock item by ID via gRPC.
- * @param {string} stockId - The ID of the stock item to retrieve.
- * @param {function(Error, Object)} callback - Callback with either an error or the stock item.
- */
+// Get stock item byID
 function getStockById(stockId, callback) {
     console.log(`Attempting to retrieve stock with ID: ${stockId}`);
 
@@ -22,11 +18,12 @@ function getStockById(stockId, callback) {
             console.error("Service discovery failed, using default address: 127.0.0.1:50052");
             address = "127.0.0.1:50052"; // Hardcoded fallback
         }
-
+        //log address to console
         console.log(`Discovered GetStockService at address: ${address}`);
 
         const getStockClient = new getStockProto.GetStockService(address, grpc.credentials.createInsecure());
 
+        //get stock error response
         getStockClient.GetStockById({ id: stockId }, (err, response) => {
             if (err) {
                 console.error("gRPC error:", err.code, "-", err.message);
@@ -38,7 +35,7 @@ function getStockById(stockId, callback) {
                 console.error(error.message);
                 return callback(error);
             }
-
+            //log message to console
             console.log("Stock Retrieved:", response.item);
             callback(null, response.item);
         });

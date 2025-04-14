@@ -30,7 +30,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Error handling middleware
+// Error handling
 app.use((err, req, res, next) => {
   logger.error(`Error: ${err.message}`);
   res.status(500).json({ error: "Internal Server Error" });
@@ -66,6 +66,7 @@ app.post('/api/chat', (req, res) => {
   if (!chatData || !chatData.user || !chatData.message) {
     return res.status(400).send("Missing 'user' or 'message' fields.");
   }
+  //log to console chat message
   console.log(`Received chat message from ${chatData.user}: ${chatData.message}`);
   sendChatMessage(chatData, (err, response) => {
     if (err) return res.status(500).send(err.message);

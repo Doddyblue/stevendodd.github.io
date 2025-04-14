@@ -37,7 +37,7 @@ function readStockItems(callback) {
       callback(error);
     });
 }
-
+//logger
 const logger = require('./logger');
 
 function getStockById(call, callback) {

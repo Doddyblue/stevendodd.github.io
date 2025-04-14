@@ -13,10 +13,10 @@ const chatClient = new chatProto.ChatService(
   grpc.credentials.createInsecure()
 );
 
-
+//chat message 
 function sendChatMessage(chatData, callback) {
   console.log('Sending chat message:', JSON.stringify(chatData, null, 2));
-
+  //log error message to console
   chatClient.SendMessage(chatData, (err, response) => {
     if (err) {
       console.error("Error sending chat message:", err);
@@ -29,7 +29,7 @@ function sendChatMessage(chatData, callback) {
     if (typeof response === 'object') {
       response = JSON.stringify(response, null, 2);
     }
-
+    //log to console
     console.log("Formatted response:", response);
     callback(null, response);
   });

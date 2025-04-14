@@ -35,7 +35,7 @@ function loadStockData(callback) {
     });
 }
 
-// Get Stock by ID with Improved Error Handling
+// Get Stock by ID error response
 function getStockById(call, callback) {
   const stockId = call.request.id.trim();
   console.log(`Requested stock ID: ${stockId}`);
@@ -48,7 +48,7 @@ function getStockById(call, callback) {
       message: `Stock with ID ${stockId} not found`,
     });
   }
-
+  //log message to console
   console.log("Stock Retrieved:", stock);
   callback(null, { item: stock });
 }

@@ -1,4 +1,4 @@
-// Show Stock List
+// Show Stock List button toggle
 function toggleStockList() {
   const container = document.getElementById("stock-list-container");
   const button = document.querySelector("button[onclick='toggleStockList()']");
@@ -28,14 +28,14 @@ function getStockList() {
         list.appendChild(item);
       });
     })
-    .catch(error => console.error('Error could not fetch stock list:', error));
+    .catch(error => console.error('Error could not fetch stock list:', error));//if no data error message
 }
 
 // Get Stock by ID
 function fetchStockById() {
   const stockId = document.getElementById('stock-id-input').value.trim();
   if (!stockId) {
-    alert('Please enter a Stock ID');
+    alert('Please enter a Stock ID');//error message for no user input
     return;
   }
   fetch(`/api/stocks/${stockId}`)
@@ -54,7 +54,7 @@ function fetchStockById() {
       `;
     })
     .catch(error => {
-      document.getElementById('stock-result').innerText = error.message;
+      document.getElementById('stock-result').innerText = error.message;//error response
       console.error('Error could not fetch stock item:', error);
     });
 }
@@ -68,7 +68,7 @@ function sendChat() {
   const user = document.getElementById("chat-user").value.trim();
   const message = document.getElementById("chat-message").value.trim();
   if (!user || !message) {
-    alert("Please enter both your name and a message!");
+    alert("Please enter both your name and a message!");//error message for no user input
     return;
   }
 
@@ -93,7 +93,7 @@ function sendChat() {
       document.getElementById("chat-message").value = '';
     })
     .catch(error => {
-      console.error("Error sending chat message:", error);
+      console.error("Error sending chat message:", error);//error response
       alert("Chat error: " + error.message);
     });
 }
