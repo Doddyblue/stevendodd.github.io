@@ -4,106 +4,66 @@ const fs = require('fs');
 const csv = require('csv-parser');
 const path = require('path');
 
-// Load stock service proto
-const STOCK_PROTO_PATH = path.join(__dirname, '../proto/stock.proto');
-const stockProto = grpc.loadPackageDefinition(protoLoader.loadSync(STOCK_PROTO_PATH)).stock;
+// Load gRPC proto files
+const GETSTOCK_PROTO_PATH = path.join(__dirname, '../proto/getstock.proto');
+const getStockProto = grpc.loadPackageDefinition(protoLoader.loadSync(GETSTOCK_PROTO_PATH)).getstock;
 
-// Load discovery service proto
-const DISCOVERY_PROTO_PATH = path.join(__dirname, '../proto/discovery.proto');
-const discoveryProto = grpc.loadPackageDefinition(protoLoader.loadSync(DISCOVERY_PROTO_PATH)).discovery;
+const GET_STOCK_SERVICE_ADDRESS = '127.0.0.1:50052';
 
-const STOCK_SERVICE_ADDRESS = '127.0.0.1:50051';
+let stockItems = [];
 
-// Read Stock List from CSV
-function readStockItems(callback) {
-  const stockItems = [];
+// Load Stock Data from CSV
+function loadStockData(callback) {
+  stockItems = [];
 
   fs.createReadStream('StockItems.csv')
     .pipe(csv())
     .on('data', (row) => {
       stockItems.push({
-        id: row.id,
-        name: row.name,
-        quantity: parseInt(row.quantity),
-        price: parseFloat(row.price),
+        id: row.id.trim(),
+        name: row.name.trim(),
+        quantity: parseInt(row.quantity) || 0,
+        price: parseFloat(row.price) || 0.0,
       });
     })
     .on('end', () => {
-      console.log("Stock Data Loaded:", stockItems);
-      callback(null, stockItems);
+      console.log("Stock Data Loaded into Memory");
+      callback();
     })
     .on('error', (error) => {
-      console.error("Error reading CSV file:", error);
-      callback(error);
+      console.error("CSV Parsing Error:", error);
     });
 }
 
-const logger = require('./logger');
-
+// Get Stock by ID with Improved Error Handling
 function getStockById(call, callback) {
   const stockId = call.request.id.trim();
-  logger.info(`Stock lookup request for ID: ${stockId}`);
+  console.log(`Requested stock ID: ${stockId}`);
 
   const stock = stockItems.find(s => s.id === stockId);
   if (!stock) {
-    logger.error(`Stock not found for ID: ${stockId}`);
-    return callback(new Error("Stock not found"));
+    console.error(` Stock not found for ID: ${stockId}`);
+    return callback({
+      code: grpc.status.NOT_FOUND,
+      message: `Stock with ID ${stockId} not found`,
+    });
   }
 
-  logger.info(`Stock Retrieved: ${JSON.stringify(stock)}`);
+  console.log("Stock Retrieved:", stock);
   callback(null, { item: stock });
 }
 
-// gRPC GetStockList - Reads Stock List from CSV
-function getStockList(call, callback) {
-  readStockItems((error, stockItems) => {
-    if (error) {
-      return callback(error);
-    }
-    callback(null, { items: stockItems });
-  });
-}
+// Start gRPC Server
+const getStockServer = new grpc.Server();
+getStockServer.addService(getStockProto.GetStockService.service, { GetStockById: getStockById });
 
-// gRPC GetStockById - Searches for Stock in CSV
-function getStockById(call, callback) {
-  const stockId = call.request.id.trim();
-
-  readStockItems((error, stockItems) => {
-    if (error) {
-      return callback(error);
-    }
-
-    const stock = stockItems.find(s => s.id === stockId);
-    if (!stock) {
-      console.error(`Stock not found for ID: ${stockId}`);
-      return callback(new Error("Stock not found"));
-    }
-
-    console.log("Stock Retrieved:", stock);
-    callback(null, stock);
-  });
-}
-
-// Start Stock Service
-const stockServer = new grpc.Server();
-stockServer.addService(stockProto.StockService.service, { GetStockList: getStockList, GetStockById: getStockById });
-
-stockServer.bindAsync(STOCK_SERVICE_ADDRESS, grpc.ServerCredentials.createInsecure(), (err, port) => {
-  if (err) {
-    console.error("Failed to start Stock Service:", err.message);
-    return;
-  }
-  console.log(`Stock Service running at ${STOCK_SERVICE_ADDRESS}`);
-
-  //Register Stock Service with Discovery Service
-  const discoveryClient = new discoveryProto.DiscoveryService('127.0.0.1:50050', grpc.credentials.createInsecure());
-  const serviceInfo = { name: "StockService", address: STOCK_SERVICE_ADDRESS };
-
-  discoveryClient.registerService(serviceInfo, (err, response) => {
+loadStockData(() => {
+  getStockServer.bindAsync(GET_STOCK_SERVICE_ADDRESS, grpc.ServerCredentials.createInsecure(), (err, port) => {
     if (err) {
-      console.error('Failed to register with Discovery Service:', err.message);
-    } else {
-      console.log('Stock Service registered successfully with Discovery Service');
+      console.error("Failed to start GetStock Service:", err.message);
+      return;
     }
+    console.log(`GetStock Service running at ${GET_STOCK_SERVICE_ADDRESS}`);
+
   });
 });
